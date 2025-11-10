@@ -2,10 +2,14 @@
 
 namespace App\Models;
 
+use App\Traits\HasSmartScopes;
 use Illuminate\Database\Eloquent\Model;
 
 class Employee extends Model
 {
+    use HasSmartScopes;
+
+    public $fillable = ['id','name', 'position_id', 'postal_code_id'];
     public function postalCode()
     {
         return $this->belongsTo(PostalCode::class);

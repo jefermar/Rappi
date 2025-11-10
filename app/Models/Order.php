@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\HasSmartScopes;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    use HasSmartScopes;
+    public $fillable = ['id','name','salesperson_order_id', 'shipping_method_id', 'user_id'];
     public function invoice()
     {
         return $this->hasMany(Invoice::class);

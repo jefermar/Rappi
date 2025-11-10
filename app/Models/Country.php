@@ -9,7 +9,7 @@ class Country extends Model
 {
     use HasSmartScopes;
 
-    protected $fillable = ['name', 'postal_code_id'];
+    protected $fillable = ['id','name'];
     
     public function state(){
         return $this->hasMany(State::class);

@@ -9,9 +9,9 @@ class City extends Model
 {
     use HasSmartScopes;
 
-    protected $fillable = ['name', 'postal_code_id'];
+    protected $fillable = ['id','name', 'postalcode_id'];
     
-    public function postalCode()
+    public function postalcode()
     {
         return $this->belongsTo(PostalCode::class);
     }
